@@ -28,7 +28,7 @@
 Acesse https://editor.p5js.org/GabrielNP/sketches/FL4wJDyRD e clique em play.
 
 # Instalar projeto e executar
-    # Pre requisitos:
+    # Pré-requisitos:
         - Node e NPM instalados
 
 1. Clonar projeto

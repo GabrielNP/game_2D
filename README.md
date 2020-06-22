@@ -1,8 +1,3 @@
-# #Imersão Game Dev JS Alura
-Junho/2020
-
-Desenvolvimento de um jogo tipo Endless Runner utilizando a biblioteca p5.js com Juliana Negreiros, Guilherme Lima e Paulo Silveira.
-
 # Game Design Development (GDD)
 
 1.0 - Título
@@ -28,3 +23,6 @@ Desenvolvimento de um jogo tipo Endless Runner utilizando a biblioteca p5.js com
 4.0 - Cenário
 
 5.0 - Mecânica
+
+# Pré-visualizar
+Acesse https://editor.p5js.org/GabrielNP/sketches/FL4wJDyRD e clique em play.

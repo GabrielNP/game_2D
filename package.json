@@ -1,0 +1,23 @@
+{
+  "name": "imersao_game_dev_js-alura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielNP/game_2D.git"
+  },
+  "author": "Gabriel NP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielNP/game_2D/issues"
+  },
+  "homepage": "https://github.com/GabrielNP/game_2D#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

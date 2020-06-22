@@ -26,3 +26,13 @@
 
 # Pré-visualizar
 Acesse https://editor.p5js.org/GabrielNP/sketches/FL4wJDyRD e clique em play.
+
+# Instalar projeto e executar
+    # Pre requisitos:
+        - Node e NPM instalados
+
+1. Clonar projeto
+
+2. Executar na linha de comando dentro do diretório do projeto `npm install` para instalar um servidor NodeJS lite-server
+
+3. Em seguida executar `npm start` para iniciar o servidor

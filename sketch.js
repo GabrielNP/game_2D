@@ -5,6 +5,7 @@ let imagemInimigoGrande;
 let imagemInimigoVoador;
 
 let cenario;
+let pontuacao;
 let personagem;
 let inimigo;
 let inimigoGrande;
@@ -109,8 +110,10 @@ const matrizInimigoVoador = [
     , [400, 600]
     , [0, 750]
 ]
+const inimigos = [];
 
 function preload() {
+    
     imagemCenario = loadImage('imagens/cenario/floresta.png');
     imagemPersonagem = loadImage('imagens/personagem/correndo.png');
     imagemInimigo = loadImage('imagens/inimigos/gotinha.png');
@@ -121,36 +124,43 @@ function preload() {
 }
 
 function setup() {
+    
     createCanvas(windowWidth, windowHeight);
+    
     cenario = new Cenario(imagemCenario, 3);
+    pontuacao = new Pontuacao();
     personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
-    inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 200);
-    inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 5, 1500);
-    inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width- 52, 200, 100, 75, 200, 150, 10, 2500);
+    
+    const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 200);
+    const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 5, 1500);
+    const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width- 52, 200, 100, 75, 200, 150, 10, 2500);
+    inimigos.push(inimigo, inimigoGrande, inimigoVoador);
+    
     frameRate(40);
+    
     somDoJogo.loop();
 }
 
 function keyPressed() {
+    
     if (key === 'ArrowUp') personagem.pula();
     somDoPulo.play();
 }
 
 function draw() {
+    
     cenario.exibe();
     cenario.move();
+
+    pontuacao.exibe();
+    pontuacao.adicionarPontos();
     
     personagem.exibe();
     personagem.aplicaGravidade();
-    
-    inimigo.exibe();
-    inimigo.move();
-    
-    inimigoGrande.exibe();
-    inimigoGrande.move();
-    
-    inimigoVoador.exibe();
-    inimigoVoador.move();
 
-    if (personagem.estaColidindo(inimigo)) { noLoop(); }
+    inimigos.forEach(inimigo => {
+        inimigo.exibe();
+        inimigo.move();
+        if (personagem.estaColidindo(inimigo)) { noLoop(); }
+    });
 }

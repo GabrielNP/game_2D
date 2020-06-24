@@ -2,8 +2,8 @@ class Personagem extends Animacao {
 
     constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite) {
         super(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite);        
-        this.yInicial = height - this.altura;
-        this.y = this.yInicial;
+        this.chao = height - this.altura - 30;
+        this.y = this.chao;
         this.gravidade = 3;
         this.velocidadeDoPulo = 0;
     }
@@ -17,7 +17,7 @@ class Personagem extends Animacao {
         this.y += this.velocidadeDoPulo;
         this.velocidadeDoPulo += this.gravidade;
 
-        if (this.y > this.yInicial) this.y = this.yInicial;
+        if (this.y > this.chao) this.y = this.chao;
     }
 
     estaColidindo(inimigo) {

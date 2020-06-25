@@ -7,22 +7,33 @@ class Personagem extends Animacao {
         this.y = this.chao;
         this.gravidade = 3;
         this.velocidadeDoPulo = 0;
+        this.alturaDoPulo = -30;
+        this.pulos = 0;
     }
 
     pula() {
-        this.y -= 50;
-        this.velocidadeDoPulo = -30
+
+        if (this.pulos < 2) {
+            this.velocidadeDoPulo = this.alturaDoPulo;
+            this.pulos++;
+        }
     }
 
     aplicaGravidade() {
+
         this.y += this.velocidadeDoPulo;
         this.velocidadeDoPulo += this.gravidade;
 
-        if (this.y > this.chao) this.y = this.chao;
+        if (this.y > this.chao) {
+            this.y = this.chao;
+            this.pulos = 0;
+        }
     }
 
     estaColidindo(inimigo) {
+
         const precisao = .7;
+
         const colisao = collideRectRect(
             this.x,
             this.y,

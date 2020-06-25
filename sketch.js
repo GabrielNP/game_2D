@@ -145,8 +145,10 @@ function setup() {
 
 function keyPressed() {
     
-    if (key === 'ArrowUp') personagem.pula();
-    somDoPulo.play();
+    if (key === 'ArrowUp') {
+        personagem.pula();
+        somDoPulo.play();
+    }
 }
 
 function draw() {

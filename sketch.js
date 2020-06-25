@@ -147,7 +147,6 @@ function keyPressed() {
     
     if (key === 'ArrowUp') {
         personagem.pula();
-        somDoPulo.play();
     }
 }
 

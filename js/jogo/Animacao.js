@@ -24,8 +24,8 @@ class Animacao {
             this.matriz[this.frameAtual][1],
             this.larguraSprite,
             this.alturaSprite,
-            200, 
-            270
+            // 200, 
+            // 270
         );
         
         this.anima();

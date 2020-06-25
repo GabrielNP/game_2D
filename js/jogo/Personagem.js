@@ -13,11 +13,15 @@ class Personagem extends Animacao {
 
     pula() {
 
-        if (this.pulos < 2) {
+        if (this._pulouDuasVezes()) {
             this.velocidadeDoPulo = this.alturaDoPulo;
             somDoPulo.play();
             this.pulos++;
         }
+    }
+
+    _pulouDuasVezes() {
+        return this.pulos < 2
     }
 
     aplicaGravidade() {
@@ -25,10 +29,14 @@ class Personagem extends Animacao {
         this.y += this.velocidadeDoPulo;
         this.velocidadeDoPulo += this.gravidade;
 
-        if (this.y > this.chao) {
+        if (this._estaNoChao()) {
             this.y = this.chao;
             this.pulos = 0;
         }
+    }
+
+    _estaNoChao() {
+        return this.y > this.chao;
     }
 
     estaColidindo(inimigo) {

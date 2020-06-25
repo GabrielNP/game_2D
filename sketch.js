@@ -15,6 +15,8 @@ let inimigoVoador;
 let somDoJogo;
 let somDoPulo;
 
+let pangolin;
+
 const matrizInimigo = [
     [0, 0]
     , [104, 0]
@@ -121,13 +123,18 @@ function preload() {
     imagemInimigo = loadImage('imagens/inimigos/gotinha.png');
     imagemInimigoGrande = loadImage('imagens/inimigos/troll.png');
     imagemInimigoVoador = loadImage('imagens/inimigos/gotinha-voadora.png')
+
     somDoJogo = loadSound('sons/trilha_jogo.mp3');
     somDoPulo = loadSound('sons/somPulo.mp3');
+
+    pangolin = loadFont('imagens/assets/Pangolin/Pangolin-Regular.ttf');
 }
 
 function setup() {
     
     createCanvas(windowWidth, windowHeight);
+
+    textFont(pangolin);
     
     cenario = new Cenario(imagemCenario, 3);
     pontuacao = new Pontuacao();

@@ -8,7 +8,7 @@ class Pontuacao {
         textAlign(RIGHT);
         fill('#fff');
         textSize(50);
-        text(parseInt(this.pontos), width - 30, 50)
+        text("SCORE: " + parseInt(this.pontos), width - 30, 50)
     }
 
     adicionarPontos() {

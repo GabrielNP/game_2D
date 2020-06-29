@@ -1,3 +1,4 @@
+// Imagens
 let imagemCenario;
 let imagemPersonagem;
 let imagemInimigo;
@@ -5,19 +6,21 @@ let imagemInimigoGrande;
 let imagemInimigoVoador;
 let imagemGameOver;
 
+// Objetos
 let cenario;
 let pontuacao;
 let personagem;
 let inimigo;
 let inimigoGrande;
 let inimigoVoador;
-let inimigoAtual = 0;
+let pangolin;
+let jogo;
 
+// Sons
 let somDoJogo;
 let somDoPulo;
 
-let pangolin;
-
+// Matrizes
 const matrizInimigo = [
     [0, 0]
     , [104, 0]

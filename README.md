@@ -38,4 +38,4 @@ Acesse https://editor.p5js.org/GabrielNP/sketches/FL4wJDyRD e clique em play.
 3. Em seguida executar `npm start` para iniciar o servidor
 
 # Cŕeditos
-"sons/somDoPulo.mp3" (jump_03.wav) por dklon em https://opengameart.org/content/platformer-jumping-sounds
+"assets/sons/somDoPulo.mp3" (jump_03.wav) por dklon em https://opengameart.org/content/platformer-jumping-sounds

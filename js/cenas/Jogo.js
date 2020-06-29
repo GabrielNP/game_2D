@@ -8,6 +8,7 @@ class Jogo {
         cenario = new Cenario(imagemCenario, 3);
         pontuacao = new Pontuacao();
         personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
+        vida = new Vida(6, 3);
         
         const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
         const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 5, 100);
@@ -33,6 +34,8 @@ class Jogo {
         
         personagem.exibe();
         personagem.aplicaGravidade();
+
+        vida.draw();
     
         const inimigo = inimigos[this.inimigoAtual];
         const inimigoVisivel = inimigo.x < -inimigo.largura;
@@ -50,10 +53,15 @@ class Jogo {
         }
     
     
-        if (personagem.estaColidindo(inimigo)) { 
-            image(imagemGameOver, width/2 - 200, height/3);
-            noLoop();
-            somDoJogo.stop();
+        if (personagem.estaColidindo(inimigo)) {
+            vida.perdeVida();
+            personagem.tornarInvencivel();
+            
+            if (vida.vidas === 0) {
+                image(imagemGameOver, width/2 - 200, height/3);
+                somDoJogo.stop();
+                noLoop();
+            }
         }
     }
 }

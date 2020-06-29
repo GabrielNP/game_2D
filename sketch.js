@@ -28,5 +28,4 @@ function keyPressed() {
 function draw() {
 
     cenas[cenaAtual].draw();
-    // if (cenaAtual === 'jogo') { jogo.draw(); }
 }

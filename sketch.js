@@ -11,6 +11,7 @@ let personagem;
 let inimigo;
 let inimigoGrande;
 let inimigoVoador;
+let inimigoAtual = 0;
 
 let somDoJogo;
 let somDoPulo;
@@ -140,9 +141,9 @@ function setup() {
     pontuacao = new Pontuacao();
     personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
     
-    const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 200);
-    const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 5, 1500);
-    const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width- 52, 200, 100, 75, 200, 150, 10, 2500);
+    const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
+    const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 5, 100);
+    const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width- 52, 200, 100, 75, 200, 150, 10, 100);
     inimigos.push(inimigo, inimigoGrande, inimigoVoador);
     
     frameRate(40);
@@ -168,13 +169,25 @@ function draw() {
     personagem.exibe();
     personagem.aplicaGravidade();
 
-    inimigos.forEach(inimigo => {
-        inimigo.exibe();
-        inimigo.move();
-        if (personagem.estaColidindo(inimigo)) { 
-            image(imagemGameOver, width/2 - 200, height/3);
-            noLoop();
-            somDoJogo.stop();
+    const inimigo = inimigos[inimigoAtual];
+    const inimigoVisivel = inimigo.x < -inimigo.largura;
+
+    
+    inimigo.exibe();
+    inimigo.move();
+
+    if (inimigoVisivel) {
+        inimigoAtual++;
+        if (inimigoAtual > 2) {
+            inimigoAtual = 0;
         }
-    });
+        inimigo.velocidade = parseInt(random(5, 20));
+    }
+
+
+    if (personagem.estaColidindo(inimigo)) { 
+        image(imagemGameOver, width/2 - 200, height/3);
+        noLoop();
+        somDoJogo.stop();
+    }
 }

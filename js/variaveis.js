@@ -5,6 +5,7 @@ let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
 let imagemGameOver;
+let imagemTelaInicial;
 
 // Objetos
 let cenario;
@@ -13,8 +14,18 @@ let personagem;
 let inimigo;
 let inimigoGrande;
 let inimigoVoador;
-let pangolin;
 let jogo;
+let cenas;
+let telaInicial;
+let botaoGerenciador;
+
+
+let cenaAtual = 'telaInicial';
+
+// Fontes
+let pangolin;
+let fonteTelaInicial;
+
 
 // Sons
 let somDoJogo;

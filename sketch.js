@@ -10,6 +10,15 @@ function setup() {
 
     jogo = new Jogo();
     jogo.setup();
+
+    telaInicial = new TelaInicial();
+
+    cenas = {
+        jogo: jogo,
+        telaInicial: telaInicial
+    };
+
+    botaoGerenciador = new BotaoGerenciador('Iniciar', width / 2, height / 7 * 5)
 }
 
 function keyPressed() {
@@ -17,6 +26,7 @@ function keyPressed() {
 }
 
 function draw() {
-    
-    jogo.draw();
+
+    cenas[cenaAtual].draw();
+    // if (cenaAtual === 'jogo') { jogo.draw(); }
 }

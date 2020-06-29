@@ -2,7 +2,7 @@ function setup() {
     
     createCanvas(windowWidth, windowHeight);
 
-    textFont(pangolin);    
+    textFont(fonteScore);    
     
     frameRate(40);
     

@@ -23,7 +23,7 @@ let botaoGerenciador;
 let cenaAtual = 'telaInicial';
 
 // Fontes
-let pangolin;
+let fonteScore;
 let fonteTelaInicial;
 
 

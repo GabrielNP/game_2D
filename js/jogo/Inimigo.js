@@ -8,18 +8,19 @@ class Inimigo extends Animacao {
         altura,
         larguraSprite,
         alturaSprite,
-        velocidade,
-        delay
+        velocidade
     ) {
         super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
         this.velocidade = velocidade;
-        this.delay = delay;
-        this.x = width + this.delay;
+        this.x = width;
     }
 
     move() {
         this.x -= this.velocidade;
+        // if (this.x < -this.largura - this.delay) { this.x = width; }
+    }
 
-        if (this.x < -this.largura - this.delay) { this.x = width; }
+    aparece() {
+        this.x = width;
     }
 }

@@ -20,7 +20,7 @@ let cenas;
 let telaInicial;
 let botaoGerenciador;
 let vida;
-
+let fita;
 
 let cenaAtual = 'telaInicial';
 
